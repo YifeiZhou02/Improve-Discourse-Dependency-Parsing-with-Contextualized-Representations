@@ -2,6 +2,7 @@
 Implementation of the paper 'Improve Discourse Dependency Parsing with Contextualized Representations'
 
 ### Requirements
+* GPU
 * python
 * pyTorch
 * transformers

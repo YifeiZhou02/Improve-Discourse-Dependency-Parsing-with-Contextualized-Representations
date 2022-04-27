@@ -2,7 +2,7 @@
 Implementation of the paper 'Improve Discourse Dependency Parsing with Contextualized Representations'
 Findings of NAACL 2022
 
-![Alt text](DDP\ model\ overview.pdf?raw=true "Title")
+[Model Overview](https://github.com/YifeiZhou02/Improve-Discourse-Dependency-Parsing-with-Contextualized-Representations/files/8577595/DDP.model.overview.pdf)
 
 ### Requirements
 * GPU

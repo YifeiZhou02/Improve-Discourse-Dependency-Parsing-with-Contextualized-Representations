@@ -1,4 +1,4 @@
-from EDU import EDU
+from utils.EDU import EDU
 import os, json, re
 import pickle
 import argparse

@@ -2,9 +2,8 @@
 #based on the feature of current state
 import torch
 import torch.nn as nn
-from Transition_system import num_EDUs
+num_EDUs = 6
 SEQ_LEN = 80
-BATCH_SIZE = 1
 
 class BertArcNet(nn.Module):
     def __init__(self, bert):

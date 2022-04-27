@@ -1,18 +1,11 @@
-from EDU import EDU
-from Transition_system import Arc_eager
-from models import RelationLSTMTagger, BertArcNet, BertRelationNet
 import argparse
 from tqdm import tqdm
-from UAS_parsing import assembled_sentence_execution, wrapper_model, modify_contextualized_embeddings
+from utils.UAS_parsing import assembled_sentence_execution, wrapper_model
 import pickle
 import torch
-import copy
-import random
 import numpy as np
 from transformers import AutoTokenizer
-from transformers import AutoModel
-from training_utils import build_training_data
-from relation_labeling import build_relation_list, assembled_transform_heads, transform_heads_simple
+from utils.relation_labeling import build_relation_list, assembled_transform_heads, transform_heads_simple
 # bert = AutoModel.from_pretrained("bert-base-chinese")
 
 

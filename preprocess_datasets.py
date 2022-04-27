@@ -95,7 +95,7 @@ def main():
     target_path = args.target_dir
     if args.dataset == "scidtb":
         data, dev_data, test_data = process_scidtb(args.path)
-        with open(target_path + 'sci.data', 'wb') as fb:
+        with open(target_path + 'sci_train.data', 'wb') as fb:
             pickle.dump(data, fb)
         with open(target_path + 'sci_dev.data', 'wb') as fb:
             pickle.dump(dev_data, fb)
@@ -103,7 +103,7 @@ def main():
             pickle.dump(test_data, fb)
     if args.dataset == "cdtb":
         data, dev_data, test_data = process_cdtb(args.path)
-        with open(target_path + 'cdtb.data', 'wb') as fb:
+        with open(target_path + 'cdtb_train.data', 'wb') as fb:
             pickle.dump(data, fb)
         with open(target_path + 'cdtb_dev.data', 'wb') as fb:
             pickle.dump(dev_data, fb)

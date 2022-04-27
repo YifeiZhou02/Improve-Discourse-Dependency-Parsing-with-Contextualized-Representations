@@ -30,7 +30,7 @@ class Transition_system:
 
     
     #return the feature description of the current state
-    def get_feature(self, option = 'embeddings'):
+    def get_feature(self):
         """
         return the feature representing the current state
         support options: 'str' and 'embeddings'
@@ -38,31 +38,10 @@ class Transition_system:
         embeddings represent each EDU with its arrtibute embeddings
         """
       #return the string representation of feature for str option
-        if option == 'str':
-          feature = ['' for i in range(num_EDUs)]
-          try:
-            feature[0] = self.stack[-1].sentence
-            feature[1] = self.stack[-2].sentence
-          except IndexError:
-            pass
-          try:
-            feature[2] = self.queue[0].sentence
-            feature[3] = self.queue[1].sentence
-          except IndexError:
-            pass
-          try:
-            feature[4] = self.paragraph[self.heads[self.stack[-1].id]-1].sentence
-          except:
-            pass
-          try:
-            feature[5] = self.paragraph[self.heads[self.stack[-2].id]-1].sentence
-          except:
-            pass
-          # feature.append(self.context)
-          return feature
         bert_dim = self.embeddings_dim
         # feature = torch.cat([torch.Tensor(EMPTY) for i in range(num_EDUs)], dim = 0).reshape(1,bert_dim*num_EDUs)
         feature = torch.zeros(1,bert_dim*num_EDUs)
+        #fill it with 0 if there is no EDU in a specific part of the template
         try:
             feature[:,:bert_dim] = self.stack[-1].embeddings
             feature[:,bert_dim:2*bert_dim] = self.stack[-2].embeddings
@@ -75,11 +54,11 @@ class Transition_system:
             pass
         try:
             feature[:,4*bert_dim:5*bert_dim] = self.paragraph[self.heads[self.stack[-1].id]-1].embeddings
-        except:
+        except (IndexError, KeyError):
             pass
         try:
             feature[:,5*bert_dim:6*bert_dim] = self.paragraph[self.heads[self.stack[-2].id]-1].embeddings
-        except:
+        except (IndexError, KeyError):
             pass
         return feature
         
@@ -258,21 +237,25 @@ class Transition_system:
                 self.heads[edu.id] = 0
         return self.heads
     
-    def model_execute(self,model,toprint = False, counter = None, option = 'embeddings'):
+    def model_execute(self,model,toprint = False, counter = None):
         """
         execute with a model given, np.argmax(model(x)) should give the action number
         if toprint: print out the action sequence
         if counter is passed: update the counter with the number of each action
         """
-        feature = self.get_feature(option)
+        feature = self.get_feature()
         action = np.argmax(model(feature))
         if counter != None:
                 counter[action] += 1
         if toprint:
             print("The action is: "+str(action))
         while(len(self.queue)!=0):
-            self.move(action)
-            feature = self.get_feature(option)
+            #if the predicted action is not allowed
+            try:
+                self.move(action)
+            except:
+                self.move(self.random_decide())
+            feature = self.get_feature()
             action = np.argmax(model(feature))
             if counter != None and len(self.queue)!=0:
                 counter[action] += 1
@@ -362,8 +345,8 @@ class Arc_eager(Transition_system):
         return self.head_lookup()
 
     #use the parent execute but reverse the heads
-    def model_execute(self,model,toprint = False, counter = None, option = 'embeddings'):
-        super().model_execute(model, toprint, counter, option)
+    def model_execute(self,model,toprint = False, counter = None):
+        super().model_execute(model, toprint, counter)
         return self.head_lookup()
 
     #use the parent random execute but reverse the heads

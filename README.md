@@ -23,8 +23,12 @@ This simple ready to use discourse parsing framework achieves the following stat
 * [SciDTB](https://github.com/PKU-TANGENT/SciDTB/tree/master/dataset)
 * [CDTB](https://arxiv.org/abs/2101.00167)
 
-### Preprocess dataset
-We provide script for preprocessing CDTB and SciDTB
+### Preprocess Dataset
+We provide script for preprocessing CDTB and SciDTB. It's also easy to adapt the code in <code>preprocess_dataset.py</code> for your own application
 * <code>mkdir preprocessed_data</code>
 * For SciDTB: <code>python3 preprocess_dataset.py --dataset scidtb --path [your path to downloaded scidtb dataset] --target_dir preprocessed_data</code>
 * For CDTB: <code>python3 preprocess_dataset.py --dataset cdtb --path [your path to downloaded cdtb dataset] --target_dir preprocessed_data</code>
+
+##Replicate the Results
+To replicate the main results shown in the paper, we provide our trained models [here](). Put it in the root directory.
+* For SciDTB, run: <code>python3 evaluate.py --dataset scidtb --path_test_data preprocessed_data/sci_test.data --path_in_sentence_model trained_models/SciDTB/sciDTB_in_sentence.pt --path_between_sentence_model trained_models/SciDTB/sciDTB_between_sentence.pt --path_relation_bert trained_models/SciDTB/sciDTB_relation_bert.pt --path_between_bert trained_models/SciDTB/sciDTB_between_bert.pt --path_lstm_tagger trained_models/SciDTB/sciDTB_lstm_tagger.pt --path_between_tagger trained_models/SciDTB/sciDTB_between_tagger.pt</code>

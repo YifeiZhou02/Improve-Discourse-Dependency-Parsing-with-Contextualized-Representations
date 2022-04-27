@@ -1,11 +1,15 @@
+import sys
+sys.path.append('./pytorch_models')
+sys.path.append('./utils')
 import argparse
 from tqdm import tqdm
-from utils.UAS_parsing import assembled_sentence_execution, wrapper_model
+from UAS_parsing import assembled_sentence_execution, wrapper_model
 import pickle
 import torch
 import numpy as np
 from transformers import AutoTokenizer
-from utils.relation_labeling import build_relation_list, assembled_transform_heads, transform_heads_simple
+from relation_labeling import build_relation_list, assembled_transform_heads, transform_heads_simple
+from models import BertArcNet, BertRelationNet, RelationLSTMTagger
 # bert = AutoModel.from_pretrained("bert-base-chinese")
 
 

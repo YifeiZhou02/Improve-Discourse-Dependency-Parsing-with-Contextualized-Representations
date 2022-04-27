@@ -1,22 +1,25 @@
-from utils.EDU import EDU
-from utils.Transition_system import Arc_eager
-from models.models import BertArcNet, SEQ_LEN, NaiveBertArcNet, BertRelationNet, RelationLSTMTagger, RelationMLPTagger
+import sys
+sys.path.append('./pytorch_models')
+sys.path.append('./utils')
+from EDU import EDU
+from Transition_system import Arc_eager
 from tqdm import tqdm
-from utils.UAS_parsing import assembled_sentence_execution, wrapper_model, modify_contextualized_embeddings
+from UAS_parsing import assembled_sentence_execution, wrapper_model, modify_contextualized_embeddings
 import pickle
 from torch.utils.data import DataLoader, TensorDataset
 import torch
 import numpy as np
 from transformers import AutoTokenizer, AutoModel
-from utils.relation_labeling import build_relation_list, assembled_transform_heads
-from utils.training_utils import build_in_sentence_data, build_between_sentence_data,\
+from relation_labeling import build_relation_list, assembled_transform_heads
+from training_utils import build_in_sentence_data, build_between_sentence_data,\
 build_training_data, classification_train, classification_validate
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 import argparse
-from utils.relation_labeling import prepare_finetune_dataloader, LSTMDataset,\
+from relation_labeling import prepare_finetune_dataloader, LSTMDataset,\
     prepare_seq_label_dataloader, labeling_train, labeling_validate
+from models import BertArcNet, BertRelationNet, RelationLSTMTagger
 # bert = AutoModel.from_pretrained("bert-base-chinese")
 
 

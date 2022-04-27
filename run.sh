@@ -4,7 +4,7 @@ python3 train_UAS.py --train_option between_sentence --dest_path between_sentenc
 
 #train in-sentence relations
 python3 train_relations.py --train_option in_sentence_bert --epochs 3 --path_dev_data preprocessed_data/sci_dev.data --dest_path in_bert_temp.pt
-python3 train_relations.py --train_option in_sentence_lstm  --epochs 30 --path_dev_data preprocessed_data/sci_dev.data  --path_bert in_bert_temp.pt --batch_size  16 --learning_rate 2e-5 --weight_decay  1e-4 --dest_path in_tagger_temp.pt
+python3 train_relations.py --train_option in_sentence_lstm  --epochs 50 --path_dev_data preprocessed_data/sci_dev.data  --path_bert in_bert_temp.pt --batch_size  16 --learning_rate 2e-5 --weight_decay  1e-4 --dest_path in_tagger_temp.pt
 
 #train between-sentence relations
 python3 train_relations.py --train_option between_sentence_bert --dest_path between_bert_temp.pt --epochs 3 --path_dev_data preprocessed_data/sci_dev.data

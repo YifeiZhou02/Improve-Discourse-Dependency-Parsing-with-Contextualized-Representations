@@ -1,4 +1,6 @@
-from utils.EDU import EDU
+import sys
+sys.path.append('./utils')
+from EDU import EDU
 import os, json, re
 import pickle
 import argparse

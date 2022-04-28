@@ -295,7 +295,7 @@ class Transition_system:
 class Arc_eager(Transition_system):
     """
     the super class Transition_system does not support the case when 
-    edu.id does not match its position in the discourse
+    edu.id does not match its position in the the list (edus)
     this class deal with this problem
     """
     def __init__(self, EDUs):

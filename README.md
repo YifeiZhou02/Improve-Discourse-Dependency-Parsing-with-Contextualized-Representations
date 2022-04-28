@@ -3,6 +3,9 @@ Implementation of the paper 'Improve Discourse Dependency Parsing with Contextua
 Findings of NAACL 2022
 The state-of-the-art transformer-based multiple-levels discourse dependency parser.
 
+![DDP model overview](https://user-images.githubusercontent.com/83000332/165659676-c641cc42-6500-44ce-afec-b64cfd8192d9.png)
+
+
 ## Requirements
 * GPU
 * python

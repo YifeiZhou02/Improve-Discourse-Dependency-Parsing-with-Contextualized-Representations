@@ -35,6 +35,6 @@ To replicate the main results shown in the paper, we provide our trained models 
 
 ## Train your own model
 We provide a sample script for training the whole architecture for SciDTB:
-run: * <code>./run.sh</code>
+run: <code>./run.sh</code>
 Note that this is only a single training iteration. To achieve the best performance, each module will need to be validated separately.
 

@@ -44,7 +44,8 @@ run: <code>./run.sh</code>
 Note that this is only a single training iteration. To achieve the best performance, each module will need to be validated separately.
 
 ## Cite our paper
-<code>@misc{https://doi.org/10.48550/arxiv.2205.02090,
+```bibtex
+@misc{https://doi.org/10.48550/arxiv.2205.02090,
   doi = {10.48550/ARXIV.2205.02090},
   
   url = {https://arxiv.org/abs/2205.02090},
@@ -61,3 +62,5 @@ Note that this is only a single training iteration. To achieve the best performa
   
   copyright = {arXiv.org perpetual, non-exclusive license}
 }</code>
+
+```

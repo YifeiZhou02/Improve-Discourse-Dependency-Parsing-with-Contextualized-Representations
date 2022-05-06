@@ -69,6 +69,13 @@ def main():
                 wrong += 1
                 this_wrong += 1
 
+    #if choose to not do relation labeling
+    if args.relation_labeling_option == 'none':
+        print("The number of UAS right is "+ str(right))
+        print("The number of UAS wrong is "+ str(wrong))
+        print("UAS is "+str(right/(right+wrong)))
+        return
+
     in_sentence_model = in_sentence_model.cpu()
     between_sentence_model = between_sentence_model.cpu()
 

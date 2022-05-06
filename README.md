@@ -33,7 +33,7 @@ We provide script for preprocessing CDTB and SciDTB. It's also easy to adapt the
 * For CDTB: <code>python3 preprocess_dataset.py --dataset cdtb --path [your path to downloaded cdtb dataset] --target_dir preprocessed_data</code>
 
 ## Replicate the Results
-To replicate the main results shown in the paper, we provide our trained models [here](https://drive.google.com/drive/folders/1NXbtM9HbZcJrN-Ymj57dGvoLC-fOPxTM?usp=sharing). Put it in the root directory.
+To replicate the main results shown in the paper, we provide our trained models [here](https://drive.google.com/drive/folders/1NXbtM9HbZcJrN-Ymj57dGvoLC-fOPxTM?usp=sharing). Put the folder <code>trained_models</code> in the root directory.
 * For SciDTB, run: <code>python3 evaluate.py --dataset scidtb --path_test_data preprocessed_data/sci_test.data --path_in_sentence_model trained_models/SciDTB/sciDTB_in_sentence.pt --path_between_sentence_model trained_models/SciDTB/sciDTB_between_sentence.pt --path_relation_bert trained_models/SciDTB/sciDTB_relation_bert.pt --path_between_bert trained_models/SciDTB/sciDTB_between_bert.pt --path_lstm_tagger trained_models/SciDTB/sciDTB_lstm_tagger.pt --path_between_tagger trained_models/SciDTB/sciDTB_between_tagger.pt</code>
 
 ## Train your own model

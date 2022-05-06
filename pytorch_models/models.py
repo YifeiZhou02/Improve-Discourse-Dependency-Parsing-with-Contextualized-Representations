@@ -31,6 +31,19 @@ class BertArcNet(nn.Module):
         x = self.fc1(x)
         return x
 
+#building on BERT for direct relation classification
+class BertRelationNet(nn.Module):
+    def __init__(self, bert, relation_list):
+        super(BertRelationNet, self).__init__()
+        self.bert = bert
+        self.fc1 = nn.Linear(768,len(relation_list))
+        self.drop = nn.Dropout(p=0.1)
+        self.sf = nn.Softmax(dim = 1)
+    def forward(self, x):
+        x = self.bert(x)[0][:, 0, :]
+        x = self.fc1(x)
+        return x
+
 class NaiveBertArcNet(nn.Module):
     """
     just use the EDU embedding as features (without being contextualized)

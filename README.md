@@ -2,6 +2,8 @@
 Implementation of the paper 'Improve Discourse Dependency Parsing with Contextualized Representations'
 Findings of NAACL 2022
 The state-of-the-art transformer-based multiple-levels discourse dependency parser.
+Paper link:
+https://arxiv.org/abs/2205.02090
 
 ![DDP model overview](https://user-images.githubusercontent.com/83000332/165659676-c641cc42-6500-44ce-afec-b64cfd8192d9.png)
 
@@ -41,3 +43,21 @@ We provide a sample script for training the whole architecture for SciDTB:
 run: <code>./run.sh</code>
 Note that this is only a single training iteration. To achieve the best performance, each module will need to be validated separately.
 
+## Cite our paper
+<code>@misc{https://doi.org/10.48550/arxiv.2205.02090,
+  doi = {10.48550/ARXIV.2205.02090},
+  
+  url = {https://arxiv.org/abs/2205.02090},
+  
+  author = {Zhou, Yifei and Feng, Yansong},
+  
+  keywords = {Computation and Language (cs.CL), Artificial Intelligence (cs.AI), FOS: Computer and information sciences, FOS: Computer and information sciences},
+  
+  title = {Improve Discourse Dependency Parsing with Contextualized Representations},
+  
+  publisher = {arXiv},
+  
+  year = {2022},
+  
+  copyright = {arXiv.org perpetual, non-exclusive license}
+}</code>

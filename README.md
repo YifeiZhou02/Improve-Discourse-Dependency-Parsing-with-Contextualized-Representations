@@ -1,7 +1,10 @@
 # Improve-Discourse-Dependency-Parsing-with-Contextualized-Representations
 Implementation of the paper 'Improve Discourse Dependency Parsing with Contextualized Representations'
+
 Findings of NAACL 2022
-The state-of-the-art transformer-based multiple-levels discourse dependency parser.
+
+The state-of-the-art (2022) transformer-based multiple-levels discourse dependency parser.
+
 Paper link:
 https://arxiv.org/abs/2205.02090
 

@@ -50,22 +50,17 @@ Note that this is only a single training iteration. To achieve the best performa
 
 ## Cite our paper
 ```bibtex
-@misc{https://doi.org/10.48550/arxiv.2205.02090,
-  doi = {10.48550/ARXIV.2205.02090},
-  
-  url = {https://arxiv.org/abs/2205.02090},
-  
-  author = {Zhou, Yifei and Feng, Yansong},
-  
-  keywords = {Computation and Language (cs.CL), Artificial Intelligence (cs.AI), FOS: Computer and information sciences, FOS: Computer and information sciences},
-  
-  title = {Improve Discourse Dependency Parsing with Contextualized Representations},
-  
-  publisher = {arXiv},
-  
-  year = {2022},
-  
-  copyright = {arXiv.org perpetual, non-exclusive license}
-}</code>
-
+@inproceedings{zhou-feng-2022-improve,
+    title = "Improve Discourse Dependency Parsing with Contextualized Representations",
+    author = "Zhou, Yifei  and
+      Feng, Yansong",
+    booktitle = "Findings of the Association for Computational Linguistics: NAACL 2022",
+    month = jul,
+    year = "2022",
+    address = "Seattle, United States",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2022.findings-naacl.173",
+    pages = "2250--2261",
+    abstract = "Previous works show that discourse analysis benefits from modeling intra- and inter-sentential levels separately, where proper representations for text units of different granularities are desired to capture both the information of the text units and their relation to the context. In this paper, we propose to take advantage of transformers to encode different contextualized representations of units of different levels to dynamically capture the information required for discourse dependency analysis on intra- and inter-sentential levels. Motivated by the observation of writing patterns shared across articles to improve discourse analysis, we propose to design sequence labeling methods to take advantage of such structural information from the context that substantially outperforms traditional direct classification methods. Experiments show that our model achieves state-of-the-art results on both English and Chinese datasets.",
+}
 ```
